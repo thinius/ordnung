@@ -1,4 +1,5 @@
 import sequelize from 'sequelize';
+import { NotFoundError } from '../components/errors';
 import db from '../models';
 
 export function list(req, res, next) {
@@ -15,13 +16,19 @@ export function create(req, res, next) {
 
 export function retrieve(req, res, next) {
 	db.User.findById(req.params.id)
-		.then(user => res.send(user))
+		.then(user => {
+			if (!user) throw new NotFoundError();
+			res.send(user)
+		})
 		.catch(next);
 }
 
 export function destroy(req, res, next) {
 	db.User.findById(req.params.id)
-		.then(user => user.destroy())
+		.then(user => {
+			if (!user) throw new NotFoundError();
+			return user.destroy()
+		})
 		.then(() => res.sendStatus(200))
 		.catch(next);
 }
