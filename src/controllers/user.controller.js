@@ -8,9 +8,20 @@ export function list(req, res, next) {
 }
 
 export function create(req, res, next) {
-	console.log(req.body);
 	db.User.create(req.body)
-	.then(user => {
-		res.send(user);
-	});
+		.then(user => res.send(user))
+		.catch(next);
+}
+
+export function retrieve(req, res, next) {
+	db.User.findById(req.params.id)
+		.then(user => res.send(user))
+		.catch(next);
+}
+
+export function destroy(req, res, next) {
+	db.User.findById(req.params.id)
+		.then(user => user.destroy())
+		.then(() => res.sendStatus(200))
+		.catch(next);
 }
