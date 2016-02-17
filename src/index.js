@@ -1,4 +1,5 @@
 import app from './app';
+import { syncDB } from './model-helpers';
 
 function listen() {
 	app.listen(9000, () => {
@@ -6,4 +7,5 @@ function listen() {
 	});
 }
 
-listen();
+syncDB()
+	.then(() => listen());
