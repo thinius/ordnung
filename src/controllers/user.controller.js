@@ -1,3 +1,8 @@
+import sequelize from 'sequelize';
+import db from '../models';
+
 export function list(req, res, next) {
-	res.send('Hello World!');
+	db.User.findAll()
+		.then(res.json.bind(res))
+		.catch(next)
 }
