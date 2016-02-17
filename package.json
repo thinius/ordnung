@@ -1,0 +1,19 @@
+{
+  "name": "ordnung-api",
+  "version": "1.0.0",
+  "description": "api for ordnung",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thinius/ordnung.git"
+  },
+  "author": "Thinius Alexander Rosé <thiniusrose@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thinius/ordnung/issues"
+  },
+  "homepage": "https://github.com/thinius/ordnung#readme"
+}

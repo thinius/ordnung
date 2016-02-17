@@ -1,0 +1,12 @@
+node_modules/
+coverage/
+dist/
+.nyc_output/
+npm-debug.log
+.tmp
+.idea
+.DS_Store
+#vim
+*.swp
+*.swo
+.environment
