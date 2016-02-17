@@ -6,3 +6,11 @@ export function list(req, res, next) {
 		.then(res.json.bind(res))
 		.catch(next)
 }
+
+export function create(req, res, next) {
+	console.log(req.body);
+	db.User.create(req.body)
+	.then(user => {
+		res.send(user);
+	});
+}
